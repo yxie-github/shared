@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球黄历 · Global Almanac</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="bar">
+    <div class="brand"><b>全 球 黄 历</b><span>Global Almanac · 老黄历</span></div>
+    <select class="ctl" id="tz" title="时区 / 城市"></select>
+    <div class="nav">
+      <button class="ctl" id="prev" title="前一天">‹</button>
+      <input class="ctl" type="date" id="datePick">
+      <button class="ctl" id="next" title="后一天">›</button>
+      <button class="ctl today-btn" id="todayBtn">今</button>
+    </div>
+  </div>
+
+  <div class="page" id="page"></div>
+
+  <p class="tznote" id="tznote"></p>
+
+  <div class="tip-mask" id="tipMask" hidden></div>
+  <div class="tip" id="tip" hidden role="dialog" aria-modal="true">
+    <div class="tip-h"><b id="tipT"></b><button id="tipX" aria-label="关闭">×</button></div>
+    <p id="tipB"></p>
+    <div class="tip-f" id="tipF"></div>
+  </div>
+<script src="lib/lunar.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
