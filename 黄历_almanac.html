@@ -14,20 +14,21 @@
     --shadow:0 18px 40px -20px rgba(60,40,20,.55);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
+  html{min-height:100%}
   body{
     font-family:"Songti SC","STSong","SimSun","Noto Serif SC","Source Han Serif SC",serif;
     color:var(--ink);
     background:
       radial-gradient(120% 90% at 50% -10%, #f6eed9 0%, #e7d8b6 60%, #d8c49a 100%);
-    min-height:100%;
+    background-attachment:fixed;
+    min-height:100vh;
     display:flex; flex-direction:column; align-items:center;
     padding:20px 14px 48px;
     -webkit-font-smoothing:antialiased;
   }
   /* ---- top control bar ---- */
   .bar{
-    width:100%; max-width:860px;
+    width:100%; max-width:860px; flex:none;
     display:flex; align-items:center; gap:10px; flex-wrap:wrap;
     margin-bottom:16px;
   }
@@ -49,7 +50,7 @@
 
   /* ---- the almanac page ---- */
   .page{
-    width:100%; max-width:860px; position:relative;
+    width:100%; max-width:860px; position:relative; flex:none;
     background:
       repeating-linear-gradient(0deg, transparent 0 38px, rgba(120,90,40,.025) 38px 39px),
       linear-gradient(180deg,#f7efda,#efe5cd 18%, #ece0c2 100%);
@@ -228,14 +229,17 @@
     .col.ji{padding-bottom:78px}
     .meta{grid-template-columns:repeat(2,1fr)}
     .cell.wide{grid-column:span 2}
-    .sc-grid{grid-template-columns:repeat(6,1fr)}
+    .sc-grid{grid-template-columns:repeat(4,1fr); gap:6px}
+    .sc-cell{padding:9px 2px}
+    .sc-cell .zhi{font-size:17px}
+    .sc-cell .hr{font-size:9px}
     .stamp{width:74px;height:74px}
   }
   @media (max-width:400px){
     .bignum{font-size:78px}
     .lunar{font-size:19px}
-    .sc-grid{grid-template-columns:repeat(4,1fr)}
-    .sc-cell .hr{font-size:7px}
+    .sc-grid{grid-template-columns:repeat(3,1fr)}
+    .sc-cell .hr{font-size:8px}
     .shen{flex-direction:column}
     .shen .ji-good{border-right:none; border-bottom:1px dashed var(--line)}
     .stamp{width:66px;height:66px;right:8px;bottom:8px}
